@@ -15,24 +15,27 @@ int countWords(string literal);
 
 int main(void)
 {
-	{
-		string literal;
+	string literal;
+	int numWords;
+	while (true) {
 		cout << "Enter a string or Q to quit: ";
 		getline(cin, literal);
-		int numOfWords = 0;
-		for (int i = 1; i < literal.length(); i++)
-		{
-			if (literal[i] == ' ')
-			{
-				numOfWords++;
-			}
-		}
-		cout << "Word count: " << numOfWords + 1 << endl;
+		if (literal == "Q") break;
+		numWords = countWords(literal);
+		cout << "Word Count: " << numWords + 1 << endl;
 	}
+	return 0;
 }
 
 int countWords(string literal)
 {
-	int numWords = 0;
-	return numWords;
+	int numOfWords = 0;
+	for (int i = 1; i < literal.length(); i++)
+	{
+		if (literal[i] == ' ')
+		{
+			numOfWords++;
+		}
+	}
+	return numOfWords;
 }
